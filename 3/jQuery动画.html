@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jQuery动画</title>
+    <script type="text/javascript" src="../../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+           /* $(document).click(function(){
+                $("#oDiv").show(3000);
+//                $("#oDiv").hide(prompt("",""));
+                $("#oDiv").hide(5000)
+            });*/
+
+            fx();
+            function fx(){
+                $("#oDiv").show(3000,function(){
+                    $("#oDiv").hide(3000,fx);
+                });
+            }
+
+        });
+
+    </script>
+    <style type="text/css">
+        #oDiv,#oDiv2 {
+            display:none;
+            background:blue;
+            width:300px;
+            height:300px;
+            border:2px solid lime;
+            position:absolute;
+            left:100px;
+            top:100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header">jQuery动画</h1>
+
+<div id="oDiv">
+    jQuery动画
+</div>
+
+<!--div id="oDiv2">
+	jQuery动画
+</div-->
+
+</iframe>
+</body>
+</html>

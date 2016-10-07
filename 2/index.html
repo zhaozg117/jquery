@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jQuery选择器</title>
+    <script type="text/javascript" src="../../lib/jquery-1.4.2.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+          /*  var firstUl=$("li:not(.highlight)");
+            var s=$("li.highlight");
+            var li_even=$("li:even"); //选择元素数组的奇数项
+            var li_eq=$("li:eq(4)"); //css伪类，eq(4) 表示数组元素[4]下标为4的元素 下标从0开始
+            var li_gt=$("li:gt(3)"); //下标大于3
+            var li_lt=$("li:lt(5)");//下标小于3
+            li_lt.addClass(" highlight")
+//            alert(li_even.size());
+            */
+           var nodes=$("li:contains(4)");   //节点内容含有4的li元素
+            var news=$("li:contains(news)");
+            //live方法动态添加样式，仅对有selector的jQuery对象有效，例如$(document.body)则无效，与之对应的是die方法
+            /*news.mouseover(function(){
+//                alert($(this));
+                $(this).addClass("highlight");
+            });*/
+            news.live("mouseover",function(){
+                $(this).addClass("highlight");
+            });
+            news.live('click mouseout' ,function(){
+                $(this).removeClass("highlight");
+            })
+            var ul_1=$("#newsList");
+
+            var lis=$("li",$("#newsList"));
+            $("#stopSpan").mouseover(function(evt){
+                evt.stopPropagation();
+                return false;
+            });
+             /*//hover()方法，hover（over,out）
+            $(lis.get(3)).mouseover(function(){
+                $("#li_div").show();
+            }).mouseout(function(){
+                $("#li_div").hide();
+            });*/
+
+         /*   $(lis.get(3)).hover(
+                    function(){
+                        $("#li_div").show();
+                    },
+                    function(){
+                        $("#li_div").hide();
+                    }
+            );*/
+
+            ul_1.append("<li> list 5 news</li>");
+         /*  nodes.bind({
+               "click":function(evt){
+                   //alert(evt.layerX);
+                   alert(evt.target.innerHTML);
+               },
+               "mouseout":function(){console.log("out")},
+           });*/
+
+
+//            a.bind("click",function(evt){
+//                evt.preventDefault();
+//            });
+
+            //toggle();参数可以为空，也可以是多个函数，表示逐个执行,参数为switch则表示切换元素显示状态
+           /* $("#header").toggle(
+                    function(){
+                        $("ul").show();
+                    },
+                    function(){
+                        $("ul").hide();
+                    }
+            );
+
+            var flag=true;
+            $("#header").click(function(){
+                flag=!flag;
+                $("ul").toggle(flag);
+            });*/
+        });
+
+    </script>
+    <style type="text/css">
+        .highlight {
+            background:#EEE;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header">jQuery选择器</h1>
+<h2>Selector</h1>
+    <ul id="newsList">
+        <li >List 1 news</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li id="li_4" >List 4
+            <div id="li_div" style="display:none;height:100px;width:100px;position:relative;background:yellow">
+                this is a div!
+                <span id="stopSpan">StopSpan</span>
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li>List 1 news</li>
+        <li >List 2</li>
+        <li >List 3</li>
+        <li>List 4</li>
+    </ul>
+    <div style="visibility:hidden;">oDiv</div>
+    <form>
+        <select>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+
+    </form>
+    <a href="http://www.baidu.com">baidu.com</a>
+</body>
+</html>

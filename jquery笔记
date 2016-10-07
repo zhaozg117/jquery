@@ -1,0 +1,86 @@
+在jquery中有两种对象，一种是Jquery对象，一种是dom对象
+$(document)  这个是Jquery对象
+doucment     dom对象
+
+Jquery对象是一个集合，将JQeury对象转化成Dom对象。
+    1. var obj=$(document); var dom_obj=obj[0]
+    2. var obj2=$(document); var dom_obj=obj2.get(2);
+总结：jQuery对象是dom对象的一种包装，包装之后可以用来使用JQuery的方法，Jquery对象和dom对象可以相互转换
+
+
+JQuery选择器
+
+基本
+    $("*") 。css("background","#00ff33")  -选择所有元素,将其背景色设置成#00ff33
+    $("#one,.mini,div")  选择id为one，class为mini，以及div标签。
+层级
+$("body div") 选择body内所有的div元素
+$("body>div") 选择body下一级所有的div元素
+$("#one+div") 选择id为one的元素紧邻的那个div
+$("#one~div") 选择id为one的元素的所有兄弟元素中的div元素
+$("#one+div>div")
+简单
+first        $("div:first") 选择第一个div元素
+last         $("div:fast")  选择最后一个div元素，从上到下，从左到右搜索，不分层级。
+not          $("div:not(.one)") 选择class不为 one 的所有 div 元素
+even         $("div:even")  改变索引值为偶数的 div 元素
+odd          $("div:odd")   改变索引值为奇数的 div 元素
+eq(index)    $("div:eq(1)") 匹配一个等于索引值的元素 索引从0开始
+gt(index)    $("div:gt(1)") 匹配一个大于索引值的元素
+lt(index)    $("div:lt(1)") 匹配一个小于索引值的元素
+header       $(":header").css("background", "#EEE") 匹配如 h1, h2, h3之类的标题元素;
+animated     $("div:not(:animated)").animate({ left: "+=20" }, 1000);  匹配所有正在执行动画效果的元素
+
+内容
+contains    $("div:contains("john")") 选择内容包含john文本的div
+empty       $("div:empty") 匹配不含有子元素或者文本的元素  $("")
+:has        $("div:has(p)") 匹配含有P段落选择器所匹配的元素的div元素
+:parent    匹配含有子元素或者文本的元素  $("div:parent")
+可见度选择器
+hidden     $("div:hidden")
+visible    $("div:visible")
+属性选择器
+$("div[id]")                含有属性id的div元素
+$("div[id='test']")         含有属性id且id=test的div元素
+$("div[id!='test']")        选择属性id等于test的div元素
+$("div[id*='test']")        含有属性id的值包含test的div元素
+$("div[id^='test']")        含有属性id的值以test开头的div元素
+$("div[id$='test']")         含有属性id的值以test结尾的div元素
+$("div[id][title*='name']")     复合属性选择器，需要同时满足多个条件时使用。
+表单
+:input
+:radio
+:button
+:text
+:password
+表单对象属性
+:checked
+:enabled;
+:disabled;
+selected:
+
+
+
+
+删除节点
+remove();   $("#d3").remove();
+empty();    $("#d3").empty();
+
+
+属性
+
+text()   $("#div1").text(),获取文本值；$("#div1").text("hello"),设置文本值为hello
+html()   用法同text（）
+val()    用法同text（）
+attr()   $("#div1").attr("name"),获取属性name的值，$("#div1").attr("name","abc")设置属性name的值为abc
+         $("#div1").removeAttr("name") 移除属性name
+css()    用法同text（）,addClass("class1"),removeClass("calss1"),toggleClass("class1",switch),无siwtch参数时，有classl类
+         则删，无则添加;当switch=true则添加，flase则删除。
+
+
+
+Ajax
+load() 方法 $("#div1").load(url,data,callback);
+            url:表示请求发送的地址url
+            data：表示是否发送数据data，不发送则为null，表示为get请求，发送则为key/value格式，为post类型。
+            callback：可选回调函数，function(data,textStatus,xmlHttpRequest){}

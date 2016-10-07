@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件yi</title>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        #odiv{
+            width:500px;
+            height:500px;
+            border: 1px solid #ff00ff;
+        }
+
+        #test{
+            width:400px;
+            height:400px;
+            border: 1px solid #EEEEEE;
+        }
+
+        #test li{
+            width:100px;
+            height:50px;
+            border: 1px solid #00ff00;
+            margin: 10px 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="odiv">
+        <ul id="test">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+  /*  $("a").bind("click",{foo:"hello"},function(e){
+        alert(e.currentTarget.innerHTML);
+    });*/
+
+   /* $("a").live("click",{},function(e){
+        alert(e.currentTarget.innerHTML);
+    });*/
+
+ /*  $("#test").delegate("li", "hover",{foo:"hello"},function(){
+    $(this).find("a").slideToggle();
+    });*/
+
+/*  $("a").click(function(e,a,b){
+     alert(e.currentTarget.innerHTML);
+      stopPropagation();
+  }).trigger("click",{foo:"hello"});*/
+
+  $("#test").on("click" ,"a",function(e){
+      alert(e.currentTarget.innerHTML);
+  } );
+   $("li:last").after("<li><a href='#'>hahhhha</a></li>");
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>draganddro[</title>
+    <script type="text/javascript" src="../../lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../lib/draggabilly.pkgd.min.js"></script>
+    <style type="text/css">
+        #oDiv{
+            height:200px;
+            width:200px;
+            background:blue;
+            position;absolute;
+            left:200px;
+            top:200px;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery(function(){
+            $("#oDiv").draggabilly({ containment: true });
+        });
+
+    </script>
+</head>
+<body>
+<div id="oDiv">this is a div</div>
+</body>
+</html>

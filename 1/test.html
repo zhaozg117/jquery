@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery基础</title>
+    <style type="text/css">
+        /*#newUl li.lists{
+            background:blue;
+        }*/
+    </style>
+    <script>
+        var oldmap={};
+        for(var i in window){
+            oldmap[i]=1
+        }
+    </script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script>
+      /*  for(var i in window){
+            if(i in oldmap) continue;
+            alert(i+" n"+window[i]);
+        }*/
+//        alert(window.jQuery===window.$);
+//      window.onload=function(){
+//          var a=jQuery("#newUl li.lists")
+////          alert(jQuery);
+////          alert(a.length);
+////          alert(a instanceof  jQuery.fn.init );
+//      }
+      // ;
+//      alert("onload");
+      $.each({id:1,name:"hp",dream:"abc"},function(i,n){
+//          alert(i+" n"+n)
+      });
+
+      $.each([{id:1},{name:"hp"},{dream:"abc"}],function(i,n){
+//          alert(i+" n"+ n)
+      });
+        jQuery(function($){
+          var list=$("li",$("#newUl"));
+//            alert(list.get(0).innerHTML);
+//            alert(list.get(3).innerHTML);
+            /*
+            * get()无参数返回一个元素数组
+            * get(index);则返回一个元素
+            * */
+
+            /*list.each(function(i,v){//jQuery的each方法，参数为一个函数，参数函数中的参数可有index，和元素本身，返回false则跳出循环
+                alert(this+" n"+i+" n"+(v===this));
+                return false;
+            });*/
+
+            //alert(list.size()+" n"+list.length);
+
+            var div=$("<div>this is a Div</div>"); //传入一个html，并使用appendTo添加
+//            div.appendTo(document.body);
+//            $(document.body).append(div)
+        });
+    jQuery(function($) {
+       var lis= $("li",$("ul:eq(0)"));
+        alert(lis.length);
+    });
+    </script>
+</head>
+<body>
+<ul id="newUl">
+    <li class="lists">this is li 1</li>
+    <li>this is li 2</li>
+    <li>this is li 3</li>
+    <li class="lists">this is li 4s</li>
+</ul>
+
+<ul >
+    <li class="lists">this is li 1</li>
+    <li>this is li 2</li>
+    <li>this is li 3</li>
+    <li class="lists">this is li 4s</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>核心方法</title>
+    <script src="../jquery-1.9.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            width: 200px;
+            background: blue;
+        }
+        div{
+            margin-top: 20px;
+            /*display: none;*/
+            width: 300px;
+            /*background: #ff00ff;*/
+        }
+        div>div{
+            display: none;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<div><span>data()：</span></div>
+<div><span>removeData():</span></div>
+<div>
+    <span>queue():</span>
+    <div>hheheh</div>
+</div>
+<div>4</div>
+
+<script>
+    $(document).ready(function(){
+        //测试data()方法
+        $("div:first span").click(function(){
+            $("div:first").data("test",{first:88,last:"last"});
+            alert($("div:first").data("test").first);
+        });
+        //测试removeData()方法
+        $("div:eq(1) span").mousemove(function(){
+            $("div:first").removeData("test");
+            alert( $("div:first").data("test"));
+        });
+
+        $("div:eq(2) span").click(function(){
+            $("div:eq(2) :nth-child(2)").show("fast");
+            $("div:eq(2) :nth-child(2)").animate({width:'+=200'},2000)
+            $("div:eq(2) :nth-child(2)").slideToggle(1000);
+            $("div:eq(2) :nth-child(2)").slideToggle("fast");
+            $("div:eq(2) :nth-child(2)").hide(1000);
+            $("div:eq(2) :nth-child(2)").show("fast");
+            $("div:eq(2) :nth-child(2)").slideDown("slow");
+            console.log( $("div:eq(2) :nth-child(2)").queue("fx").length);
+            $("div:eq(2) :nth-child(2)").dequeue();
+             $.each($("div:eq(2) :nth-child(2)").queue("fx"),function(n,v){
+                console.log(n+"\n"+v);
+            });
+
+        });
+
+    });
+</script>
+</body>
+</html>

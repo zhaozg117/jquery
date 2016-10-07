@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jQuery链式调用与隐式递归</title>
+    <script type="text/javascript" src="../../lib/jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+            var nodes=$("li:contains(News)");
+            nodes.css("color","red").attr("title","title!!!");
+            // 返回第一个匹配的元素样式属性
+//           alert(nodes.css("font-size")) ;
+//           alert(nodes.html());
+//            nodes.html("innerHTML!!!");
+        });
+    </script>
+    <style type="text/css">
+        .highlight {
+            background:#EEE;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header">jQuery链式调用与隐式递归</h1>
+<p>jQuery中规定，一个方法不需要返回值的时候，它就将这个对象自身返回</p>
+<ul id="newsList">
+    <li>List 1 News</li>
+    <li>List 2</li>
+    <li>List 3</li>
+    <li>List 4</li>
+</ul>
+<ul>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+    <li>List 4 News</li>
+</ul>
+
+</body>
+</html>
