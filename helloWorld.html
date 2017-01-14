@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app08">
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div ng-controller="conttroller08" style="border:1px solid #f0ad4e;width:500px">
+    <div hello></div>
+    <h3>{{introduce.text}}</h3>
+</div>
+
+
+
+
+</body>
+<script src="../lib/angular.min.js"></script>
+<script>
+    var myapp=angular.module("app08",[]);
+    myapp.controller("conttroller08",["$scope",function($scope){
+        $scope.greeting={
+            text:"angular Js conttroller08"
+        }
+        console.log($scope);
+    }]);
+
+    myapp.directive("hello",function(){
+        return {
+            restrict:'EA',
+            template:"<h3>{{greeting.text}}</h3>",
+            replace:false,
+            scope:false,
+            link:function(scope){
+                console.log(scope);
+                scope.introduce={
+                    text:"hello,this why we play"
+                }
+            }
+        };
+    });
+
+
+</script>
+</html>
