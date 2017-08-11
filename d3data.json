@@ -1,0 +1,108 @@
+[
+  {
+    "name": "TestDesign",
+    "NodeId":"0",
+    "parent": "null",
+    "children":[
+      {
+        "name": "Hello",
+        "NodeId":"1",
+        "_children":[
+          {
+            "name": "world",
+            "NodeId":"11",
+            "children":[
+              {
+                "name": "china",
+                "NodeId":"111"
+              }
+            ]
+          },
+
+          {
+            "name": "非法",
+            "NodeId":"12",
+            "children":[
+              {
+                "name": "转包",
+                "NodeId":"121"
+              }
+            ]
+          }
+
+        ]
+      },
+      {
+        "name": "style",
+        "NodeId":"2",
+        "_children":[
+          {
+            "name": "display",
+            "NodeId":"21",
+            "children":[
+              {
+                "name": "block",
+                "NodeId":"211"
+              }
+            ]
+          },
+
+          {
+            "name": "position",
+            "NodeId":"22",
+            "children":[
+              {
+                "name": "relative",
+                "NodeId":"221"
+              }
+            ]
+          }
+
+        ]
+      },
+
+      {
+        "name": "zhaozg",
+        "NodeId":"3",
+        "_children":[
+          {
+            "name": "zhao",
+            "NodeId":"31",
+            "children":[
+              {
+                "name": "zzg",
+                "NodeId":"311"
+              }
+            ]
+          },
+
+          {
+            "name": "alias",
+            "NodeId":"32",
+            "children":[
+              {
+                "name": "flex",
+                "NodeId":"321"
+              }
+            ]
+          }
+
+        ]
+      },
+
+      {
+        "name": "testbot",
+        "NodeId":"4",
+        "_children":[
+          {
+            "name": "format",
+            "NodeId":"41"
+          }
+        ]
+      }
+
+
+    ]
+
+  }
+]
